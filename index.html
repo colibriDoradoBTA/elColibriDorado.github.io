@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto del Colibrí Dorado - Bogotá</title>
+    <!-- Link a Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Link al archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><span class="header-icon">🏆</span> Reto del Colibrí Dorado <span class="header-icon">🏆</span></h1>
+        <p class="subtitle">El Pulso Oculto de Bogotá te Espera</p>
+    </header>
+
+    <main>
+        <!-- Sección de Introducción y Perfil Inicial -->
+        <section id="intro-section" class="challenge-card visible">
+            <h2>¡Bienvenido/a, Agente!</h2>
+            <img src="images/bogota-skyline-intro.jpg" alt="Vista panorámica de Bogotá al atardecer" class="challenge-image"> <!-- Asegúrate que esta imagen exista -->
+            <p>¿Listo/a para descifrar los secretos de Bogotá? Antes de empezar, necesitamos conocerte. Completa tu perfil de agente. Tus respuestas nos ayudarán a entender cómo tu 'parche' puede conquistar la ciudad.</p>
+
+            <form id="profiling-form">
+                <h3>Crea tu Perfil de Agente</h3>
+                <!-- Campos del formulario de perfil (sin cambios respecto al anterior) -->
+                <div class="form-group">
+                    <label for="nombre">Tu Nombre o Alias de Agente:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="fortalezas">Tus 2 Fortalezas Clave para el Reto:</label>
+                    <input type="text" id="fortalezas" name="fortalezas" placeholder="Ej: Observador/a, Líder natural, Tecnológico/a..." required>
+                </div>
+                <div class="form-group">
+                    <label for="debilidades">1 Área donde buscas apoyo del equipo:</label>
+                    <input type="text" id="debilidades" name="debilidades" placeholder="Ej: Me pierdo fácil, Me estreso bajo presión..." required>
+                </div>
+                 <div class="form-group">
+                    <label for="intereses">¿Qué te Mueve? (Intereses):</label>
+                    <input type="text" id="intereses" name="intereses" placeholder="Ej: Arte urbano, Historia, Tecnología, Naturaleza..." required>
+                </div>
+                <h4>Autoevaluación de Habilidades (1=Bajo, 5=Alto)</h4>
+                <div class="form-group rating-group"> <label>a. Autoconocimiento:</label> <div> <input type="radio" name="autoconocimiento" value="1" id="auto1" required><label for="auto1">1</label> <input type="radio" name="autoconocimiento" value="2" id="auto2"><label for="auto2">2</label> <input type="radio" name="autoconocimiento" value="3" id="auto3"><label for="auto3">3</label> <input type="radio" name="autoconocimiento" value="4" id="auto4"><label for="auto4">4</label> <input type="radio" name="autoconocimiento" value="5" id="auto5"><label for="auto5">5</label> </div> </div>
+                <div class="form-group rating-group"> <label>b. Fortaleza Emocional:</label> <div> <input type="radio" name="fortaleza_emocional" value="1" id="emo1" required><label for="emo1">1</label> <input type="radio" name="fortaleza_emocional" value="2" id="emo2"><label for="emo2">2</label> <input type="radio" name="fortaleza_emocional" value="3" id="emo3"><label for="emo3">3</label> <input type="radio" name="fortaleza_emocional" value="4" id="emo4"><label for="emo4">4</label> <input type="radio" name="fortaleza_emocional" value="5" id="emo5"><label for="emo5">5</label> </div> </div>
+                <div class="form-group rating-group"> <label>c. Habilidades Cognitivas:</label> <div> <input type="radio" name="habilidades_cognitivas" value="1" id="cog1" required><label for="cog1">1</label> <input type="radio" name="habilidades_cognitivas" value="2" id="cog2"><label for="cog2">2</label> <input type="radio" name="habilidades_cognitivas" value="3" id="cog3"><label for="cog3">3</label> <input type="radio" name="habilidades_cognitivas" value="4" id="cog4"><label for="cog4">4</label> <input type="radio" name="habilidades_cognitivas" value="5" id="cog5"><label for="cog5">5</label> </div> </div>
+                <div class="form-group rating-group"> <label>d. Conexión Interpersonal:</label> <div> <input type="radio" name="conexion_interpersonal" value="1" id="con1" required><label for="con1">1</label> <input type="radio" name="conexion_interpersonal" value="2" id="con2"><label for="con2">2</label> <input type="radio" name="conexion_interpersonal" value="3" id="con3"><label for="con3">3</label> <input type="radio" name="conexion_interpersonal" value="4" id="con4"><label for="con4">4</label> <input type="radio" name="conexion_interpersonal" value="5" id="con5"><label for="con5">5</label> </div> </div>
+                <button type="submit" class="submit-button">¡Estoy Listo/a para el Reto!</button>
+                <p id="profiling-status" class="status-message"></p>
+            </form>
+        </section>
+
+        <!-- Sección Contenedora de Desafíos -->
+        <section id="challenges-section">
+
+            <!-- Desafío 1: Autoconocimiento -->
+            <div id="challenge-1" class="challenge-card">
+                <h2><span class="challenge-number">1</span> Manifiesto del Parche</h2>
+                <img src="images/plaza-bolivar.jpg" alt="Plaza de Bolívar concurrida" class="challenge-image"> <!-- Imagen de Plaza Bolívar -->
+                <p><strong>Habilidad:</strong> Autoconocimiento</p>
+                <p><strong>Misión:</strong> La base de todo gran equipo es conocerse. Reúnanse (virtual o físicamente) y creen su 'Manifiesto del Parche'. Definan roles basados en las fortalezas que cada uno indicó en su perfil. Documenten estos roles y cómo se complementarán.</p>
+                <p><strong>Coordenadas (Referencia):</strong> 4.5981, -74.0761</p>
+                <form class="challenge-form">
+                    <input type="hidden" name="challengeId" value="1">
+                    <div class="form-group">
+                        <label for="respuesta-1">Enlace a su Manifiesto (Doc, Imagen, etc.):</label>
+                        <input type="url" id="respuesta-1" name="respuesta" placeholder="Pega aquí el enlace de Google Drive, Imgur, etc." required>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Manifiesto</button>
+                    <p class="status-message"></p>
+                </form>
+            </div>
+
+            <!-- Desafío 2: Empatía -->
+            <div id="challenge-2" class="challenge-card">
+                 <h2><span class="challenge-number">2</span> Voces del Parque Nacional</h2>
+                 <img src="images/parque-nacional.jpg" alt="Gente diversa en el Parque Nacional" class="challenge-image"> <!-- Imagen Parque Nacional -->
+                 <p><strong>Habilidad:</strong> Empatía</p>
+                 <p><strong>Misión:</strong> Investiguen sobre las necesidades y frustraciones de un grupo de breakdance y un grupo de tai chi que comparten (con dificultad) el espacio en el Parque Nacional. Presenten un resumen que muestre comprensión de AMBAS perspectivas.</p>
+                 <p><strong>Coordenadas (Referencia):</strong> 4.6235, -74.0648</p>
+                 <form class="challenge-form">
+                    <input type="hidden" name="challengeId" value="2">
+                    <div class="form-group">
+                        <label for="respuesta-2">Enlace a su Resumen Empático (Doc, Audio, etc.):</label>
+                        <input type="url" id="respuesta-2" name="respuesta" placeholder="Pega aquí el enlace" required>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Resumen</button>
+                    <p class="status-message"></p>
+                </form>
+            </div>
+
+             <!-- Desafío 3: Comunicación Asertiva -->
+            <div id="challenge-3" class="challenge-card">
+                <h2><span class="challenge-number">3</span> Acceso Restringido</h2>
+                 <img src="images/biblioteca-luis-angel-arango.jpg" alt="Interior imponente de una biblioteca" class="challenge-image"> <!-- Imagen Biblioteca -->
+                 <p><strong>Habilidad:</strong> Comunicación Asertiva</p>
+                 <p><strong>Misión:</strong> Necesitan "acceso" a un archivo virtual custodiado por un bibliotecario estricto. Redacten una solicitud (email o guion) clara, respetuosa y firme, anticipando sus preocupaciones y proponiendo soluciones.</p>
+                 <p><strong>Coordenadas (Referencia):</strong> 4.5970, -74.0730</p>
+                 <form class="challenge-form">
+                    <input type="hidden" name="challengeId" value="3">
+                    <div class="form-group">
+                        <label for="respuesta-3">Enlace a su Solicitud Asertiva (Doc, Texto):</label>
+                        <input type="url" id="respuesta-3" name="respuesta" placeholder="Pega aquí el enlace" required>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Solicitud</button>
+                    <p class="status-message"></p>
+                </form>
+            </div>
+
+            <!-- Desafío 4: Relaciones Interpersonales -->
+            <div id="challenge-4" class="challenge-card">
+                <h2><span class="challenge-number">4</span> Caos en Paloquemao</h2>
+                 <img src="images/paloquemao.jpg" alt="Mercado de Paloquemao lleno de gente" class="challenge-image"> <!-- Imagen Paloquemao -->
+                 <p><strong>Habilidad:</strong> Relaciones Interpersonales</p>
+                 <p><strong>Misión:</strong> El caos de Paloquemao genera tensión en el equipo tras una pista fallida. Describan brevemente cómo manejaron el conflicto interno y se reorganizaron para encontrar al contacto correcto.</p>
+                 <p><strong>Coordenadas (Referencia):</strong> 4.6067, -74.0853</p>
+                 <form class="challenge-form">
+                    <input type="hidden" name="challengeId" value="4">
+                    <div class="form-group">
+                        <label for="respuesta-4">Enlace a su Estrategia de Equipo (Doc, Audio, etc.):</label>
+                        <input type="url" id="respuesta-4" name="respuesta" placeholder="Pega aquí el enlace a su reflexión" required>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Estrategia</button>
+                    <p class="status-message"></p>
+                </form>
+            </div>
+
+            <!-- Desafío 5: Toma de Decisiones -->
+            <div id="challenge-5" class="challenge-card">
+                <h2><span class="challenge-number">5</span> La Bifurcación del Eje</h2>
+                 <img src="images/eje-ambiental-interseccion.jpg" alt="Intersección vial concurrida en Bogotá" class="challenge-image"> <!-- Imagen Eje Ambiental -->
+                 <p><strong>Habilidad:</strong> Toma de Decisiones</p>
+                 <p><strong>Misión:</strong> Deben elegir entre una ruta rápida y riesgosa (Las Cruces) o una lenta y segura (Eje Ambiental). Analicen pros, contras y riesgos. Documenten su proceso de decisión y la elección final.</p>
+                 <p><strong>Coordenadas (Referencia):</strong> 4.6018, -74.0753</p>
+                 <form class="challenge-form">
+                    <input type="hidden" name="challengeId" value="5">
+                    <div class="form-group">
+                        <label for="respuesta-5">Enlace a su Análisis de Decisión (Doc, etc.):</label>
+                        <input type="url" id="respuesta-5" name="respuesta" placeholder="Pega aquí el enlace" required>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Decisión</button>
+                    <p class="status-message"></p>
+                </form>
+            </div>
+
+            <!-- Desafío 6: Solución de Problemas -->
+            <div id="challenge-6" class="challenge-card">
+                <h2><span class="challenge-number">6</span> El Enigma de la Quinta</h2>
+                 <img src="images/quinta-bolivar-jardin.jpg" alt="Jardines de la Quinta de Bolívar" class="challenge-image"> <!-- Imagen Quinta de Bolívar -->
+                 <p><strong>Habilidad:</strong> Solución de Problemas</p>
+                 <p><strong>Misión:</strong> Se enfrentan a un *escape room* virtual en la Quinta de Bolívar. Deben resolver acertijos lógicos y encontrar un código final. ¿Cuál es el código?</p>
+                 <p><strong>Coordenadas (Referencia):</strong> 4.6075, -74.0643</p>
+                 <form class="challenge-form">
+                    <input type="hidden" name="challengeId" value="6">
+                    <div class="form-group">
+                        <label for="respuesta-6">Código Final Descubierto:</label>
+                        <input type="text" id="respuesta-6" name="respuesta" placeholder="Escribe aquí el código" required>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Código</button>
+                    <p class="status-message"></p>
+                </form>
+            </div>
+
+            <!-- Desafío 7: Pensamiento Creativo -->
+            <div id="challenge-7" class="challenge-card">
+                <h2><span class="challenge-number">7</span> Mensaje Oculto del Grafiti</h2>
+                 <img src="images/distrito-grafiti.jpg" alt="Mural colorido en el Distrito Grafiti" class="challenge-image"> <!-- Imagen Distrito Grafiti -->
+                 <p><strong>Habilidad:</strong> Pensamiento Creativo</p>
+                 <p><strong>Misión:</strong> La pista está oculta en un complejo mural del Distrito Grafiti. No es obvia. Interpreten los símbolos, colores o patrones de forma creativa. ¿Qué lugar o concepto clave revela?</p>
+                 <p><strong>Coordenadas (Referencia):</strong> 4.6195, -74.1108</p>
+                 <form class="challenge-form">
+                    <input type="hidden" name="challengeId" value="7">
+                    <div class="form-group">
+                        <label for="respuesta-7">Lugar o Concepto Descifrado:</label>
+                        <input type="text" id="respuesta-7" name="respuesta" placeholder="Escribe aquí tu interpretación" required>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Interpretación</button>
+                    <p class="status-message"></p>
+                </form>
+            </div>
+
+             <!-- Desafío 8: Pensamiento Crítico -->
+            <div id="challenge-8" class="challenge-card">
+                <h2><span class="challenge-number">8</span> Desinformación Viral</h2>
+                 <img src="images/cementerio-central-entrada.jpg" alt="Entrada principal del Cementerio Central" class="challenge-image"> <!-- Imagen Cementerio Central -->
+                 <p><strong>Habilidad:</strong> Pensamiento Crítico</p>
+                 <p><strong>Misión:</strong> Reciben mensajes virales y contradictorios sobre el reto cerca del Cementerio Central. Analicen la información: ¿Fuente? ¿Evidencia? ¿Sesgos? ¿Es confiable o un engaño? Documenten su análisis crítico.</p>
+                 <p><strong>Coordenadas (Referencia):</strong> 4.6170, -74.0765</p>
+                 <form class="challenge-form">
+                    <input type="hidden" name="challengeId" value="8">
+                    <div class="form-group">
+                        <label for="respuesta-8">Enlace a su Análisis Crítico (Doc, etc.):</label>
+                        <input type="url" id="respuesta-8" name="respuesta" placeholder="Pega aquí el enlace" required>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Análisis</button>
+                    <p class="status-message"></p>
+                </form>
+            </div>
+
+            <!-- Desafío 9: Manejo de Emociones -->
+            <div id="challenge-9" class="challenge-card">
+                <h2><span class="challenge-number">9</span> Perdidos en La Candelaria</h2>
+                 <img src="images/callejon-candelaria.jpg" alt="Callejón estrecho y colonial en La Candelaria" class="challenge-image"> <!-- Imagen La Candelaria -->
+                 <p><strong>Habilidad:</strong> Manejo de Emociones</p>
+                 <p><strong>Misión:</strong> Están perdidos y frustrados en el laberinto de La Candelaria. Reconozcan las emociones que surgen. Describan brevemente 1-2 estrategias que usaron como equipo para gestionar la frustración y seguir adelante.</p>
+                 <p><strong>Coordenadas (Referencia):</strong> 4.5955, -74.0718</p>
+                 <form class="challenge-form">
+                    <input type="hidden" name="challengeId" value="9">
+                    <div class="form-group">
+                        <label for="respuesta-9">Enlace a sus Estrategias Emocionales (Doc, etc.):</label>
+                        <input type="url" id="respuesta-9" name="respuesta" placeholder="Pega aquí el enlace" required>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Estrategias</button>
+                    <p class="status-message"></p>
+                </form>
+            </div>
+
+            <!-- Desafío 10: Manejo de Estrés -->
+             <div id="challenge-10" class="challenge-card">
+                <h2><span class="challenge-number">10</span> La Contrarreloj Final</h2>
+                 <img src="images/torre-colpatria-noche.jpg" alt="Vista nocturna de Bogotá desde la Torre Colpatria" class="challenge-image"> <!-- Imagen Torre Colpatria -->
+                 <p><strong>Habilidad:</strong> Manejo de Estrés y Tensión</p>
+                 <p><strong>Misión:</strong> ¡La cima! Deben resolver un acertijo final usando la "vista" desde la Torre Colpatria (imágenes/Street View) con tiempo límite. ¡Coordinación y calma bajo presión!</p>
+                 <p><strong>Coordenadas (Referencia):</strong> 4.6115, -74.0710</p>
+                 <p id="timer-10" class="timer">Tiempo Restante: --:--</p> <!-- Elemento para el temporizador -->
+                 <form class="challenge-form">
+                    <input type="hidden" name="challengeId" value="10">
+                    <div class="form-group">
+                        <label for="respuesta-10">Respuesta al Acertijo Final:</label>
+                        <input type="text" id="respuesta-10" name="respuesta" placeholder="Escribe aquí la solución" required>
+                    </div>
+                    <button type="submit" class="submit-button">¡Enviar Respuesta Final!</button>
+                    <p class="status-message"></p>
+                </form>
+            </div>
+
+             <!-- Mensaje Final del Juego -->
+             <div id="completion-message" class="challenge-card">
+                <h2>¡Reto Completado!</h2>
+                <img src="images/bogota-celebracion.jpg" alt="Celebración con fondo de Bogotá" class="challenge-image"> <!-- Imagen Celebración -->
+                <p>¡Felicitaciones, Agentes! Han descifrado el Pulso Oculto de Bogotá y demostrado ser un 'parche' increíble. Han conquistado no solo la ciudad, sino también desafíos internos, afilando sus Habilidades para la Vida.</p>
+                <p>Revisen su progreso y reflexionen sobre lo aprendido. ¡El espíritu del Colibrí Dorado ahora vuela con ustedes!</p>
+                <p><strong>¡Gracias por jugar!</strong></p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Reto del Colibrí Dorado - Una Aventura Urbana Educativa.</p>
+    </footer>
+
+    <!-- Link al archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

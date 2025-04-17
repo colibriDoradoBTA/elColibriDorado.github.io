@@ -1,0 +1,348 @@
+/* Importación de Fuentes (Asegúrate que el link esté en el HTML) */
+/* @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;600;700&display=swap'); */
+
+/* Variables de Color - ¡Ajusta esta paleta vibrante a tu gusto! */
+:root {
+    --primary-color: #FFD700;    /* Oro vibrante */
+    --secondary-color: #FF1493; /* Rosa Eléctrico */
+    --accent-color: #00FFFF;     /* Cyan Brillante */
+    --background-dark: #1a1a1a;  /* Negro/Gris muy oscuro */
+    --background-light: #f0f0f0; /* Gris claro */
+    --text-dark: #1f1f1f;
+    --text-light: #ffffff;
+    --success-color: #32CD32;    /* Verde Lima */
+    --error-color: #FF4500;      /* Rojo Naranja */
+    --card-background: #2c2c2c;  /* Gris oscuro para tarjetas */
+}
+
+/* Reseteo Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Fuente principal legible */
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: var(--background-dark);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-family: 'Bangers', cursive; /* Fuente llamativa para el título */
+    font-size: 3rem;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.header-icon {
+    font-size: 2rem;
+    vertical-align: middle;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+main {
+    flex-grow: 1;
+    padding: 2rem 1rem;
+    max-width: 900px; /* Limita el ancho en pantallas grandes */
+    margin: 0 auto; /* Centra el contenido principal */
+    width: 100%;
+}
+
+/* Estilo de las Tarjetas de Desafío */
+.challenge-card {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--accent-color);
+    display: none; /* Ocultos por defecto */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.challenge-card.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.challenge-card h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.challenge-number {
+    background-color: var(--accent-color);
+    color: var(--background-dark);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    font-family: 'Poppins', sans-serif; /* Asegurar que el número use Poppins */
+    font-weight: bold;
+}
+
+
+.challenge-image {
+    width: 100%;
+    max-height: 300px; /* Limita la altura de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 3px solid var(--secondary-color);
+}
+
+.challenge-card p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.challenge-card strong {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* Estilos del Formulario */
+form {
+    margin-top: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--accent-color);
+    background-color: #333; /* Fondo oscuro para inputs */
+    color: var(--text-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="url"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color);
+}
+
+/* Estilo para grupos de Radio Buttons (Rating) */
+.rating-group label {
+    margin-bottom: 0.7rem; /* Más espacio antes de los botones */
+}
+
+.rating-group div {
+    display: flex;
+    justify-content: space-around; /* Distribuye los botones */
+    align-items: center;
+    background-color: #333;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+}
+
+.rating-group input[type="radio"] {
+    display: none; /* Oculta el radio button por defecto */
+}
+
+.rating-group input[type="radio"] + label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    padding: 0.5rem 0.8rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%; /* Círculos */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block; /* Asegura que el label tome padding */
+    margin-bottom: 0; /* Resetea margen del label general */
+    line-height: 1; /* Ajusta altura de línea para centrar texto */
+}
+
+.rating-group input[type="radio"]:checked + label {
+    background-color: var(--accent-color);
+    color: var(--background-dark);
+}
+
+.rating-group input[type="radio"] + label:hover {
+     background-color: rgba(0, 255, 255, 0.2); /* Hover sutil */
+}
+
+
+/* Botón de Envío */
+.submit-button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--background-dark);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px; /* Botón más redondeado */
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: block; /* Ocupa todo el ancho disponible */
+    width: 100%;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+}
+
+/* Mensajes de Estado */
+.status-message {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    display: none; /* Oculto hasta que se necesite */
+}
+
+.status-message.success {
+    background-color: var(--success-color);
+    color: var(--background-dark);
+    display: block;
+}
+
+.status-message.error {
+    background-color: var(--error-color);
+    color: var(--text-light);
+    display: block;
+}
+
+/* Temporizador */
+.timer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--error-color); /* Rojo para urgencia */
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada */
+}
+
+footer {
+    background-color: #111; /* Footer aún más oscuro */
+    color: var(--accent-color);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem; /* Empuja el footer hacia abajo */
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Design --- */
+
+/* Para Tablets y móviles grandes */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+    .challenge-card h2 {
+        font-size: 1.8rem;
+    }
+     .challenge-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1.3rem;
+    }
+    .rating-group input[type="radio"] + label {
+        font-size: 1rem;
+        padding: 0.4rem 0.6rem;
+    }
+}
+
+/* Para Móviles pequeños */
+@media (max-width: 480px) {
+     header h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    .header-icon {
+        font-size: 1.5rem;
+    }
+     .subtitle {
+        font-size: 0.9rem;
+    }
+    main {
+        padding: 1rem 0.5rem;
+    }
+    .challenge-card {
+        padding: 1rem;
+        border-width: 1px;
+    }
+     .challenge-card h2 {
+        font-size: 1.6rem;
+    }
+      .challenge-number {
+        width: 30px;
+        height: 30px;
+        font-size: 1.1rem;
+        margin-right: 0.5rem;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="url"],
+    .form-group textarea {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+    .submit-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 1rem;
+    }
+     .rating-group div {
+        padding: 0.3rem;
+    }
+    .rating-group input[type="radio"] + label {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.5rem;
+    }
+}
