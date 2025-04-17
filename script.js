@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- CONFIGURACIÓN ---
     // !! IMPORTANTE: Reemplaza esta URL con la URL de tu Google Apps Script desplegado !!
-    const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzrzs1DI5qe5NdFtJ1eKe2AvEpw7RD3RqhEZ93Eh6SDPPrnyDg2fOh3IRPA6YbWxinq/exec'; // Pega aquí tu URL /exec
+    const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzs1UirqUX8jFPHjtU6Bzk3B9t-SgCY9O5P_8kt5fE4Vs_OgOjzxTswMK5Og-XCzyaT/exec'; // Pega aquí tu URL /exec
     // Número total de desafíos (sin contar la intro)
     const TOTAL_CHALLENGES = 10;
     const CHALLENGE_10_TIMER_DURATION_SECONDS = 15 * 60; // 15 minutos para el desafío 10
