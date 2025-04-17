@@ -46,3 +46,67 @@ Este proyecto busca desarrollar de forma lúdica, práctica y contextualizada la
     *   Iconografía inspirada en estilos de juegos (ej. Hearthstone).
 
 ## 📁 Estructura de Archivos
+
+├── index.html # Estructura principal de la página (contenido)
+├── style.css # Estilos visuales y diseño responsivo
+├── script.js # Lógica del juego, interacción con el usuario y comunicación con Google Apps Script
+├── images/ # Carpeta que CONTIENE todas las imágenes de ambiente e iconos
+│ ├── bogota-skyline-intro.jpg
+│ ├── plaza-bolivar.jpg
+│ # ... (todas las demás imágenes .jpg o .png)
+│ └── colibri-dorado-icon.png
+└── README.md # Este archivo de información
+
+**Importante:** La carpeta `images/` y los nombres de archivo dentro de ella deben coincidir *exactamente* con los usados en `index.html` y `style.css`.
+
+## ⚙️ Cómo Funciona
+
+1.  El usuario interactúa con la página web (`index.html`).
+2.  Al enviar el formulario de perfil o las respuestas de los desafíos, JavaScript (`script.js`) captura los datos.
+3.  JavaScript utiliza la `Fetch API` para enviar estos datos (en formato JSON) a la URL pública del **Google Apps Script** desplegado como Web App.
+4.  El **Google Apps Script** (`Code.gs`) recibe la solicitud POST, procesa los datos JSON y los escribe en las filas correspondientes de la **Google Sheet** configurada.
+5.  El script devuelve una respuesta (éxito o error) a JavaScript.
+6.  JavaScript actualiza la interfaz de usuario (mostrando mensajes de estado, desbloqueando el siguiente desafío) basándose en la respuesta del script.
+
+## 🚀 Configuración para Desarrollo o Despliegue Propio
+
+Si deseas clonar este repositorio y desplegar tu propia versión:
+
+1.  **Clona el Repositorio:** `git clone https://github.com/<tu-username>/<tu-repositorio>.git`
+2.  **Crea una Google Sheet:**
+    *   Crea una nueva hoja de cálculo en Google Sheets.
+    *   Nómbrala descriptivamente (ej. "Datos Reto Colibri").
+    *   Crea dos hojas dentro de ella: `Perfiles` y `Progreso Reto`.
+    *   Configura los encabezados de columna en la primera fila de cada hoja como se especifica en el código de `Code.gs` y las instrucciones previas (Timestamp, Nombre, Fortalezas, etc. para Perfiles; Timestamp, Nombre Agente, ID Desafio, etc. para Progreso Reto).
+    *   **Importante:** Añade la fórmula para generar el "Prompt Personaje" en la columna correspondiente de la hoja `Perfiles`.
+    *   Obtén el **ID de la Hoja de Cálculo** (de la URL: `.../spreadsheets/d/ID_DE_TU_HOJA/edit`).
+3.  **Crea y Despliega Google Apps Script:**
+    *   Crea un nuevo proyecto en Google Apps Script ([script.google.com](https://script.google.com/)).
+    *   Pega el contenido del archivo `Code.gs` proporcionado.
+    *   **Reemplaza** `'ID_DE_TU_HOJA_DE_CALCULO'` dentro del script con el ID real de tu Google Sheet.
+    *   **Implementa** el script como una **Aplicación Web**:
+        *   Ejecutar como: `Yo`
+        *   Quién tiene acceso: `Cualquier usuario` (**¡CRUCIAL!**)
+    *   Autoriza los permisos necesarios.
+    *   Copia la **URL de la Aplicación Web** generada (termina en `/exec`).
+4.  **Actualiza el Código Frontend:**
+    *   Abre el archivo `script.js`.
+    *   Pega la URL de tu Aplicación Web de Google Apps Script en la constante `GOOGLE_APPS_SCRIPT_URL`.
+5.  **Añade las Imágenes:** Genera o consigue las imágenes necesarias y colócalas dentro de la carpeta `images/` con los nombres de archivo exactos utilizados en `index.html`.
+6.  **Despliega en GitHub Pages (o similar):**
+    *   Sube todos los archivos (incluida la carpeta `images/`) a un repositorio público de GitHub.
+    *   Ve a `Settings` > `Pages`.
+    *   Selecciona `Deploy from a branch`, elige la rama `main` (o `master`) y la carpeta `/ (root)`.
+    *   Guarda y espera a que se publique.
+
+## 🤝 Contribuciones
+
+¡Las ideas y mejoras son bienvenidas! Si encuentras un error, tienes una sugerencia o quieres proponer una mejora, por favor abre un **Issue** en este repositorio de GitHub.
+
+## 📄 Licencia
+
+Este proyecto se distribuye bajo la **Licencia MIT**. Puedes usar, modificar y distribuir el código libremente, manteniendo la atribución original.
+
+---
+
+*¡Esperamos que disfrutes y aprendas con el Reto del Colibrí Dorado!*
